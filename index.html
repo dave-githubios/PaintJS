@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="https://img.icons8.com/external-justicon-lineal-color-justicon/32/external-canvas-back-to-school-justicon-lineal-color-justicon.png">
+    <title>PaintJS</title>
+  </head>
+
+  <body>
+    <div class="drawing">
+      <div class="drawing_btns">
+        <button id="jsFill" class = "button_opacity"><img src="https://img.icons8.com/ios/32/roller-brush--v1.png" alt=""></button>
+        <button id="jsBrush" ><img src="https://img.icons8.com/ios/32/paint.png" alt=""></button>
+        <button id="jsEraser" class = "button_opacity"><img src="https://img.icons8.com/ios/32/eraser.png" alt=""></button>
+      </div>
+      
+      <div class="drawing_range">
+        <input type="range" id="jsRange" min="0.1" max="10" value="5" step="0.1" oninput="this.nextElementSibling.value = this.value"/>
+        <output>5</output>
+      </div>
+            
+      <div class="drawing_colors_container">
+        <div class="drawing_colors">
+          <div class="drawing_color jsColor selected_color" style="background-color:#2c2c2c"></div>
+          <div class="drawing_color jsColor" style="background-color:#FFFFFF"></div>
+          <div class="drawing_color jsColor" style="background-color:#FF3B30"></div>
+          <div class="drawing_color jsColor" style="background-color:#FF9500"></div>
+          <div class="drawing_color jsColor" style="background-color:#FFCC00"></div>
+          <div class="drawing_color jsColor" style="background-color:#4CD963"></div>
+          <div class="drawing_color jsColor" style="background-color:#5AC8FA"></div>
+          <div class="drawing_color jsColor" style="background-color:#0579FF"></div>
+          <div class="drawing_color jsColor" style="background-color:#5856D6"></div>
+        </div>
+
+        <div class="container">
+          <div class="select_colors">
+            <div class = "select_colors_btn">
+              <input type="color" id="jsSelectingColor" style="display:none">
+              <button id="jsSelectBtn" onclick="choosingColor()"><img src="https://img.icons8.com/fluency/50/paint-palette.png" alt=""></button>
+              <button id="jsSelectSaveBtn"><img src="https://img.icons8.com/ios/32/pin--v1.png" alt=""></button>
+            </div>
+            <div id="jsSelectedColor" class="select_color jsColor at_first backgroundstyle2" ></div>
+          </div>
+        </div>
+
+        <div class="random_colors">
+          <button id="jsRandom"><img src="https://img.icons8.com/office/50/rgb-circle-2.png" alt=""></button>
+          <div id="jsRandomColor" class="random_color jsColor at_first backgroundstyle"></div>
+        </div>
+      </div>
+    </div>
+    
+    <canvas id="jsCanvas" class="canvas cursorstyle"></canvas>
+    
+    <div class="filecontrol">
+      <div class="filecontrol_btns">
+        <button id="jsDelete" onclick="removeCheck()"><img src="https://img.icons8.com/dusk/32/delete.png" alt=""></button>
+        <button id="jsSave"><img src="https://img.icons8.com/office/32/save.png" alt=""></button>
+      </div>
+      <div><label for="url">Enter URL to import image file!</label></div>
+      <div class="fileimport_btns">
+        <input type="url" name = "url" id="url" size = "30" style = "margin-top: 10px; margin-left: 10px; margin-right: 10px">
+        <img id = "empty" src="" style="display:none;">
+        <button id="jsImport"><img src="https://img.icons8.com/ios-glyphs/32/import.png" alt=""></button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

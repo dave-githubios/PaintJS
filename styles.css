@@ -1,0 +1,254 @@
+@import "reset.css";
+
+body {
+    background-color: #F6F9FC;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.cursorstyle {
+    cursor: url(https://img.icons8.com/ios/32/paint.png) 0 32, auto;
+}
+
+.canvas {
+    width: 700px;
+    height: 700px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)
+}
+
+.drawing {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc((100vw - 700px)/2);
+}
+
+.drawing .drawing_colors_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.drawing .drawing_colors_container .drawing_colors {
+    display: flex;
+    flex-direction: column;
+    margin: 52px 20px 0px 20px; /* top right bottom left */
+}
+  
+.drawing_colors_container .drawing_colors .drawing_color {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.drawing_colors_container .drawing_colors .selected_color {
+    z-index: 1;
+    transform: scale(1.2);
+}
+
+.drawing .drawing_range {
+    margin-bottom: 30px;
+}
+
+.drawing .drawing_btns {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-basis: calc(5vh);
+}
+
+.drawing_btns button {
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 0px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.drawing_btns .button_opacity {
+    opacity: 0.2;
+}
+
+.drawing_btns button:active {
+    transform: scale(0.98);
+}
+
+.drawing_colors_container .random_colors {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.drawing_colors_container .container {
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.select_colors {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 20px 0px 20px; /* top right bottom left */
+}
+
+.select_colors .selected_color {
+    z-index: 1;
+    transform: scale(1.2);
+}
+
+.select_colors .select_colors_btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.select_colors .select_colors_btn button {
+    all: unset;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.select_colors .select_color {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    flex: none;
+}
+
+.select_colors .selected_color {
+    z-index: 1;
+    transform: scale(1.2);
+}
+
+.select_colors .backgroundstyle2 {
+    background-color: transparent;
+}
+
+.select_colors .at_first {
+    display: none;
+}
+
+.random_colors {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 0px 20px; /* top right bottom left */
+}
+
+.random_colors .backgroundstyle {
+    background-color: transparent;
+}
+
+.random_colors button {
+    all: unset;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.random_colors button:active {
+    animation: myrotate 0.1s infinite;
+}
+
+.drawing_colors_container .random_colors .random_color {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.drawing_colors_container .random_colors .selected_color {
+    z-index: 1;
+    transform: scale(1.2);
+}
+
+.drawing_colors_container .random_colors .at_first {
+    display: none;
+}
+
+.filecontrol {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: calc((100vw - 700px)/2);
+}
+
+.filecontrol .filecontrol_btns {
+    margin-bottom: 30px;
+}
+
+.filecontrol_btns button {
+    all: unset;
+    background-color: white;
+    padding: 5px 0px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.filecontrol_btns button:active {
+    transform: scale(0.98);
+}
+
+.filecontrol .fileimport_btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.fileimport_btns button {
+    all: unset;
+    background-color: white;
+    padding: 5px 0px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.fileimport_btns button:active {
+    transform: scale(0.98);
+}
+
+@keyframes myrotate {
+    from {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    to {transform: rotate(360deg);}
+}
